@@ -29,7 +29,7 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
       $ sudo mkswap /dev/sda2 (if you need swap)
       $ sudo swapon /dev/sda2 (if you need swap)
       $ sudo mkfs.ext4 /dev/sda3
-_
+
  6. Mounting partition
       $ sudo mount /dev/sda3 /mnt
       $ sudo mkdir -p /mnt/boot
