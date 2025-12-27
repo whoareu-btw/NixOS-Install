@@ -20,14 +20,14 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
       
 	 $ sudo dd if=your-directory-nixos-iso of=flashdrive-you-gonna-use bs=4M status=progress
 
- # 3. Setup
-      Boot to the flashdrive, then use lsblk command to see disk you gonna use. 
-	  Use cfdisk trough the drive you gonna use, for exampe like:
+# 3. Setup
+     Boot to the flashdrive, then use lsblk command to see disk you gonna use. 
+	 Use cfdisk trough the drive you gonna use, for exampe like:
       
-	  $ sudo cfdisk /dev/sda
-      - then give 1G for boot partition.
-      - 4G for swap (if you need swap).
-      - and then root partition.
+	 $ sudo cfdisk /dev/sda
+     - then give 1G for boot partition.
+     - 4G for swap (if you need swap).
+     - and then root partition.
 
 # 4. Network
      If you use wifi, use nmtui command. If you use LAN just plug and play. 
