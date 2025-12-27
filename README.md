@@ -57,7 +57,7 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
 	      grub = {
             enable = true;
             device = "nodev";
-		      efiSupport = true;
+		    efiSupport = true;
 	        };
 	      efi.canTouchEfiVariables = true;
          };
