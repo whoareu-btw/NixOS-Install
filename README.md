@@ -69,7 +69,7 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
        {   
          networking.hostName = "name";
 
-         users.users.haru = {
+         users.users.name = {
            isNormalUser = true;
            extraGroups = [ "wheel" ];  # For enable sudo
              packages = with pkgs; [   # if u need package only for this user
