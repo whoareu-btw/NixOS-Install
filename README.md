@@ -1,6 +1,4 @@
 # NixOS-Install
-How to install nixos manual
-
 How to install nixos manually on EFI device (Made by wanna-know-something-man or Nyan)
 
 # 1. Iso
