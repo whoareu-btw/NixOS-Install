@@ -1,14 +1,16 @@
 How to install nixos manually on EFI device (Made by wanna-know-something-man or Nyan)
 
  1. Iso
-    First thing first, you should have nixos iso before you install nixos on your system. Go to the nixos website, choose the iso (I'll use minimal iso for this tutorial). Download the iso (either x86_64 or arm64, I'll gonna use x86_64), verify the iso using SHA command :
+    First thing first, you should have nixos iso before you install nixos on your system. 
+    Go to the nixos website, choose the iso (I'll use minimal iso for this tutorial). Download the iso (either x86_64 or arm64, I'll gonna use x86_64), verify the iso using SHA command :
       # sha256sum nixos.iso
       # when you go to the sha links, download it and use as like this:
          $ sha256sum nixos.iso.sha256
  	# when the command says "OK", it's ready to use.
 
  2. Boootable
-    Burn the file into flashdrive, you can use tools like ventoy or balena etcher. If you want the fast track, use dd to burn the iso to the flashdrive. Or if you want use dd, you can use like this:
+    Burn the file into flashdrive, you can use tools like ventoy or balena etcher. 
+    If you want the fast track, use dd to burn the iso to the flashdrive. Or if you want use dd, you can use like this:
       $ sudo dd if=your-directory-nixos-iso of=flashdrive-you-gonna-use bs=4M status=progress
 
  3. Setup
