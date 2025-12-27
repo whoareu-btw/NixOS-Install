@@ -44,28 +44,28 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
 	  {
 	    bootloader = {
 	      grub = {
-	        enable = true;
-		device = "nodev";
-		efiSupport = true;
-	      };
+            enable = true;
+            device = "nodev";
+		      efiSupport = true;
+	        };
 	      efi.canTouchEfiVariables = true;
 	    };
-          }
+      }
 
  8. Setup hostname and user
     Still in cofiguration.nix btw
      
       {
-         networking.hostName = "name";
+        networking.hostName = "name";
      
-         users.users.haru = {
-           isNormalUser = true;
-           extraGroups = [ "wheel" ];  # For enable sudo
-             packages = with pkgs; [   # if u need package only for this user
-               tree
-             ];
-         };
-       }
+        users.users.haru = {
+          isNormalUser = true;
+          extraGroups = [ "wheel" ];  # For enable sudo
+            packages = with pkgs; [   # if u need package only for this user
+            tree
+            ];
+        };
+      }
 
  9. Install nixos to your drive
     Install by using this command:
