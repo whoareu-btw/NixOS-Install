@@ -5,21 +5,24 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
 
 # 1. Iso
      First thing first, you should have nixos iso before you install nixos on your system. 
-	 Go to the nixos website, choose the iso (I'll use minimal iso for this tutorial). Download the iso (either x86_64 or arm64, I'll gonna use x86_64), verify the iso using SHA command :
+	 Go to the nixos website, choose the iso (I'll use minimal iso for this tutorial). 
+	 Download the iso (either x86_64 or arm64, I'll gonna use x86_64), verify the iso using SHA command :
        
-	  $ sha256sum nixos.iso
-      when you go to the sha links, download it and use as like this:
-      $ sha256sum nixos.iso.sha256
- 	  when the output says "OK", it's ready to use.
+	 $ sha256sum nixos.iso
+      
+	 when you go to the sha links, download it and use as like this:
+     $ sha256sum nixos.iso.sha256
+ 	 when the output says "OK", it's ready to use.
 
 # 2. Boootable
      Burn the file into flashdrive, you can use tools like ventoy or balena etcher. 
      If you want the fast track, use dd to burn the iso to the flashdrive. Or if you want use dd, you can use like this:
       
-	   $ sudo dd if=your-directory-nixos-iso of=flashdrive-you-gonna-use bs=4M status=progress
+	 $ sudo dd if=your-directory-nixos-iso of=flashdrive-you-gonna-use bs=4M status=progress
 
  # 3. Setup
-      Boot to the flashdrive, then use lsblk command to see disk you gonna use. Use cfdisk trough the drive you gonna use, for exampe like:
+      Boot to the flashdrive, then use lsblk command to see disk you gonna use. 
+	  Use cfdisk trough the drive you gonna use, for exampe like:
       
 	  $ sudo cfdisk /dev/sda
       - then give 1G for boot partition.
@@ -27,7 +30,8 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
       - and then root partition.
 
 # 4. Network
-     if you use wifi, use nmtui command. If you use LAN just plug and play. For make sure your internet connect or not, use this command:
+     If you use wifi, use nmtui command. If you use LAN just plug and play. 
+	 For make sure your internet connect or not, use this command:
       
 	 $ ping -c 3 google.com
      
@@ -74,13 +78,13 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
          };
        }
 
-# 11. Install nixos to your drive
+# 11. Install nixos into your drive
       Install by using this command:
    
 	  $ sudo nixos-install
 
 # 12. After installation
-      Once you done with installation, login as root, then give ur user a password by this command:
+      Once you done with installation, login as root, then give your user a password by this command:
   
 	  $ passwd name
 
