@@ -9,7 +9,7 @@ How to install nixos manually on EFI device (Made by wanna-know-something-man or
 	 $ sha256sum nixos.iso
       
 	 when you go to the sha links, download it and use as like this:
-     $ sha256sum nixos.iso.sha256
+     $ sha256sum -c nixos.iso.sha256
  	 when the output says "OK", it's ready to use.
 
 # 2. Boootable
