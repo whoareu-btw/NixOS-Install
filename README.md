@@ -1,5 +1,5 @@
 # NixOS-Install
-How to install nixos manually on EFI device (Made by wanna-know-something-man or Nyan)
+How to install nixos manually on EFI device (Made by neko-chi)
 
 # 1. Iso
      First thing first, you should have nixos iso before you install nixos on your system. 
