@@ -41,9 +41,9 @@ How to install nixos manually on EFI device (Made by neko-chi)
      $ mkfs.ext4 /dev/sda3
 
 # 6. Mounting partition
-      $ mount /dev/sda3 /mnt
-      $ mkdir -p /mnt/boot
-      $ mount /dev/sda1 /mnt/boot
+     $ mount /dev/sda3 /mnt
+     $ mkdir -p /mnt/boot
+     $ mount /dev/sda1 /mnt/boot
 
 # 7. Generate config and editing config
      $ nixos-generate-config --root /mnt
@@ -63,26 +63,26 @@ How to install nixos manually on EFI device (Made by neko-chi)
          };
        }
 
-	if you want systemd boot:
+	If you want systemd boot:
 	
-     { 
-	   bootloader = {
-	     systemdboot.enable = true
-		 efi.canTouchEfiVariables = true;
-	   };
-	 }
+       { 
+	     bootloader = {
+	       systemdboot.enable = true
+		   efi.canTouchEfiVariables = true;
+	     };
+	   }
 
-	if you want limine:
+	If you want limine:
 	
-	  {
-	    bootloader = {
-		  limine = {
-		    enable = true;
-			efiSupport = true;
-		  };
+	   {
+	     bootloader = {
+		   limine = {
+		     enable = true;
+			 efiSupport = true;
+		   };
 		  efi.canTouchEfiVariables = true;
-		};
-	  }
+		 };
+	   }
 	  
 # 9. Setup hostname and user
      Still in cofiguration.nix btw
@@ -108,7 +108,7 @@ How to install nixos manually on EFI device (Made by neko-chi)
 		  fastfetch
 		  htop
 		];
-	 }
+	  }
 		  
 # 11. Install nixos into your drive
       Install by using this command:
