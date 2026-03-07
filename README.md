@@ -51,7 +51,7 @@ How to install nixos manually on EFI device (Made by neko-chi)
 
  # 8. Bootloader 
      If you want use grub as your bootloader, then edit the config to this:
-        
+
       {
 	    bootloader = {
 	      grub = {
@@ -62,7 +62,28 @@ How to install nixos manually on EFI device (Made by neko-chi)
 	      efi.canTouchEfiVariables = true;
          };
        }
-      
+
+	if you want systemd boot:
+	
+     { 
+	   bootloader = {
+	     systemdboot.enable = true
+		 efi.canTouchEfiVariables = true;
+	   };
+	 }
+
+	if you want limine:
+	
+	  {
+	    bootloader = {
+		  limine = {
+		    enable = true;
+			efiSupport = true;
+		  };
+		  efi.canTouchEfiVariables = true;
+		};
+	  }
+	  
 # 9. Setup hostname and user
      Still in cofiguration.nix btw
      
@@ -79,7 +100,7 @@ How to install nixos manually on EFI device (Made by neko-chi)
        }
 
 # 10. Packages 
-      set environmentPackages or userPackages, I use environmentPackages as example 
+      set environmentPackages or user packages, I use environment packages as example 
 
 	  {
 	    environment.systemPackages = with pkgs: [
