@@ -22,7 +22,8 @@ How to install nixos manually on EFI device (Made by neko-chi)
      Boot to the flashdrive, then use lsblk command to see disk you gonna use. 
 	 Use cfdisk trough the drive you gonna use, for exampe like:
       
-	 $ sudo cfdisk /dev/sda
+	 $ sudo -i (change to root)
+	 $ cfdisk /dev/sda
      - then give 1G for boot partition.
      - 4G for swap (if you need swap).
      - and then root partition.
@@ -34,20 +35,21 @@ How to install nixos manually on EFI device (Made by neko-chi)
 	 $ ping -c 3 google.com
      
 # 5. Format disk
-     $ sudo mkfs.vfat -F32 /dev/sda1
-     $ sudo mkswap /dev/sda2 (if you need swap)
-     $ sudo swapon /dev/sda2 (if you need swap)
-     $ sudo mkfs.ext4 /dev/sda3
+     $ mkfs.vfat -F32 /dev/sda1
+     $ mkswap /dev/sda2 (if you need swap)
+     $ swapon /dev/sda2 (if you need swap)
+     $ mkfs.ext4 /dev/sda3
 
 # 6. Mounting partition
-      $ sudo mount /dev/sda3 /mnt
-      $ sudo mkdir -p /mnt/boot
-      $ sudo mount /dev/sda1
+      $ mount /dev/sda3 /mnt
+      $ mkdir -p /mnt/boot
+      $ mount /dev/sda1 /mnt/boot
 
 # 7. Generate config and editing config
-     $ sudo nixos-generate-config --root /mnt
-	 $ sudo nano /mnt/etc/nixos/configuration.nix
- 
+     $ nixos-generate-config --root /mnt
+	 $ nano /mnt/etc/nixos/configuration.nix
+
+ # 8. Bootloader 
      If you want use grub as your bootloader, then edit the config to this:
         
       {
@@ -76,10 +78,21 @@ How to install nixos manually on EFI device (Made by neko-chi)
          };
        }
 
+# 10. Packages 
+      set environmentPackages or userPackages, I use environmentPackages as example 
+
+	  {
+	    environment.systemPackages = with pkgs: [
+		  vim
+		  fastfetch
+		  htop
+		];
+	 }
+		  
 # 11. Install nixos into your drive
       Install by using this command:
    
-	  $ sudo nixos-install
+	  $ nixos-install
 
 # 12. After installation
       Once you done with installation, login as root, then give your user a password by this command:
